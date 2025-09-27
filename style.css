@@ -7,52 +7,88 @@
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
   background: #0b1736; /* màu nền tối */
   color: #fff;
+}
+header {
+  padding: 12px 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header img {
+  height: 32px;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 50px;
-  max-width: 1200px;
+  padding: 80px;
   margin: 0 auto;
+  height: 100vh;
+  align-items: center;
 }
 
 .card {
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 64px;
+  padding: 48px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 280px;
+  justify-content: flex-end;
+  min-height: 480px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  font-size: 32px;
+  font-weight: 300;
 }
 .card.blue {
   background: #2196f3;
+  margin-top: 240px;
 }
 .card.green {
   background: #4caf50;
+  min-height: 560px;
+  margin-left: -40px;
+  margin-top: 160px;
+}
+.card.green ul {
+  padding-left: 24px;
+}
+.card.green ul li {
+  list-style-type: decimal;
+  margin-top: 24px;
+}
+.card.green ul li:first-child {
+  margin-top: 0;
 }
 .card.orange {
   background: #f4a62a;
+  min-height: 720px;
+  margin-left: -40px;
   color: #fff;
 }
 .card h2 {
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 48px;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 120%;
 }
 
-.button {
-  margin-top: 20px;
+.s01btn {
   display: inline-block;
   background: #fff;
-  color: #333;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: bold;
+  color: #1155D0;
+  padding: 32px 48px;
+  border-radius: 48px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -2px;
   text-decoration: none;
+  margin-top: 48px;
 }
 
 .illustrations {
