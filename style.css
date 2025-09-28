@@ -186,19 +186,20 @@ header img {
 .s01btn::after {
   content: '';
   position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 100px;
-  height: 100px;
-  filter: blur(10px);
-  background:rgba(17,85,208,0.2);
+  bottom: -160px;
+  right: -160px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  filter: blur(40px);
+  background:rgba(17,85,208,0.9);
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
 .s01btn:hover::after {
   opacity: 1;
-  top: -50px;
-  left: -50px;
+  bottom: -80px;
+  right: -80px;
 }
 .bg_pattern {
   position: absolute;
