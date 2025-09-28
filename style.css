@@ -192,7 +192,7 @@ header img {
   height: 160px;
   border-radius: 50%;
   filter: blur(40px);
-  background:rgba(17,85,208,0.9);
+  background:rgba(17,85,208,0.8);
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
