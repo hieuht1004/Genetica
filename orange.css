@@ -1,0 +1,37 @@
+/* Nội dung mới ẩn ban đầu */
+.card .new-content {
+  opacity: 0;
+  display: none;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Ẩn 2 card kia bằng hiệu ứng trượt */
+.cards.hide-others .green,
+.cards.hide-others .blue {
+  opacity: 0;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Khi expand: card cam full width */
+.card.orange.expand {
+  grid-column: 1 / -1; /* chiếm toàn bộ chiều ngang grid */
+  justify-content: flex-start;
+    margin-left: 0;
+    padding: 72px 12px 12px 12px;
+    height: 100%;
+}
+
+.card.orange.expand .default {
+  display: none;
+}
+.card.orange.expand .new-content {
+  opacity: 1;
+  display: block;
+  transform: translateY(0);
+  height: 100%;
+}
+.cards.hide-others {
+  grid-template-columns: 1fr; /* còn duy nhất 1 cột */
+}

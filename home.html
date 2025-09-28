@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Genetica Landing page</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="orange.css" />
+    <link rel="stylesheet" href="questionslider.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,66 +15,13 @@
     />
   </head>
   <canvas id="starfield"></canvas>
-<script>
-  const canvas = document.getElementById("starfield");
-  const ctx = canvas.getContext("2d");
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  const numStars = 240;
-  const stars = [];
-
-  for (let i = 0; i < numStars; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5 + 0.5,
-      dx: (Math.random() - 0.5) * 0.3, 
-      dy: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random(),           
-      opacityChange: (Math.random() * 0.02 + 0.005) * (Math.random() < 0.5 ? -1 : 1) 
-    });
-  }
-
-  // Vẽ sao
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let star of stars) {
-      star.opacity += star.opacityChange;
-      if (star.opacity <= 0 || star.opacity >= 1) {
-        star.opacityChange *= -1;
-      }
-
-      ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-      ctx.fill();
-
-      star.x += star.dx;
-      star.y += star.dy;
-
-      if (star.x < 0 || star.x > canvas.width) star.dx *= -1;
-      if (star.y < 0 || star.y > canvas.height) star.dy *= -1;
-    }
-
-    requestAnimationFrame(drawStars);
-  }
-
-  drawStars();
-</script>
 
   <body>
     <header>
       <img src="assets/logo.png" alt="" />
     </header>
 
-    <div class="container">
+    <div class="container cards">
       <div class="card blue">
         <h2>Nuôi con không phải cuộc chiến</h2>
         <p>
@@ -95,15 +44,65 @@
         <img class="boy2" src="assets/boy2.png" alt="" />
       </div>
 
-      <div class="card orange">
-        <p>
-          Hãy khám phá thế giới tiềm năng nghề nghiệp của con qua 5 câu hỏi thú
-          vị sau đây nhé!
-        </p>
-        <a href="#" class="button s01btn"
-          >Bắt đầu <span>→</span> <br />
-          bài trắc nghiệm</a
-        >
+      <div class="card orange" id="orangeCard">
+        <div class="card-content default">
+          <p>
+            Hãy khám phá thế giới tiềm năng nghề nghiệp của con qua 5 câu hỏi
+            thú vị sau đây nhé!
+          </p>
+          <a href="#" class="button s01btn" id="startBtn"
+            >Bắt đầu <span>→</span> <br />
+            bài trắc nghiệm</a
+          >
+        </div>
+        <div class="card-content hidden new-content">
+          <div class="quiz_question">
+            <div class="qq_content">
+              <h3>
+                Giá sách hay tủ quần áo của con có sự thay đổi trong cách sắp
+                xếp, con sẽ:
+              </h3>
+            </div>
+            <div class="qq_slider">
+              <div class="slider-container">
+                <div class="sliderlabel">
+                  <label id="leftLabel">Nhanh chóng nhận ra</label>
+                  <label id="rightLabel">Không để ý lắm</label>
+                </div>
+
+                <div class="center-slider">
+                  <div class="scale" id="scaleMarks">
+                    <span><label></label>5</span>
+                    <span><label></label>4</span>
+                    <span><label></label>3</span>
+                    <span><label></label>2</span>
+                    <span>1</span>
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2<label></label></span>
+                    <span>3<label></label></span>
+                    <span>4<label></label></span>
+                    <span>5<label></label></span>
+                  </div>
+                  <input
+                    type="range"
+                    min="-5"
+                    max="5"
+                    value="0"
+                    step="1"
+                    class="slider"
+                    id="quizSlider"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="qq_action">
+              <a class="qbtn ghost" href="">Quay lại</a>
+              <a class="qbtn main" href="">Tiếp theo</a>
+            </div>
+            <div class="qq_step">1/5</div>
+          </div>
+        </div>
         <img class="planet" src="assets/planet.png" alt="" />
       </div>
     </div>
@@ -113,5 +112,8 @@
       <div class="circleL"></div>
       <img class="stars" src="assets/stars.png" alt="" />
     </div>
+    <script src="metaverse.js" type="text/javascript"></script>
+    <script src="orange.js" type="text/javascript"></script>
+    <script src="questionslider.js" type="text/javascript"></script>
   </body>
 </html>
