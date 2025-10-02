@@ -392,8 +392,6 @@ result.html
     align-items: center;
     justify-items: center;
 }
-.rds2,
-.rds3,
 .rds7,
 .rds10 {
     display: grid;
@@ -465,9 +463,8 @@ result.html
     margin-bottom: 24px;
 }
 .rds4 {
-    max-width: 960px;
     background: url(assets/ri4.png) top left repeat;
-    padding: 96px 72px 72px 72px;
+    padding: 72px;
     border-radius: 72px;
 }
 .rds4 .title {
@@ -475,7 +472,7 @@ result.html
     color: white;
 }
 .rds4 ul li {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 150%;
     padding: 48px 98px 48px 48px;
@@ -621,32 +618,13 @@ result.html
         top: -80%;
     }
 }
-.rds9 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 24px;
-    align-items: center;
-    justify-items: center;
-    padding: 128px 0;
-}
 .rds9 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
     position: relative;
-}
-.rds9 .left .rds9groupitem {
-    margin-top: 96px;
-}
-.rds9 .right .rds9groupitem {
-    margin-bottom: 96px;
-}
-.rds9groupitem {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
 }
 .rds_card01 {
     display: flex;
@@ -654,7 +632,7 @@ result.html
     column-gap: 24px;
     padding: 36px;
     border-radius: 24px;
-    border: 2px solid var(--color-brand-blue);
+    border: 2px solid rgba(0, 0, 0, .1);
     position: relative;
     overflow: hidden;
 }
@@ -665,6 +643,11 @@ result.html
     height: 80px;
     background: var(--color-brand-blue);
     filter: blur(40px);
+    bottom: -120px;
+    right: -120px;
+    transition: all ease-in-out .6s;
+}
+.rds11 .rds_card01:hover::before {
     bottom: -40px;
     right: -40px;
 }
@@ -716,6 +699,11 @@ result.html
     align-items: center;
     margin: 128px;
 }
+.rds11 .rds9groupitem {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
 .rds11 .title {
     margin-bottom: 72px;
 }
@@ -725,7 +713,9 @@ result.html
 .rds11 .rds_card01:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    border-color: var(--color-brand-blue);
 }
+
 .rds11 .rds_card01 h6 {
     display: flex;
     flex-direction: column;
@@ -801,4 +791,147 @@ result.html
         transform: scale(1);
     }
 }
+.rds0 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(1, 1fr);
+    gap: 72px;
+}
+.rds0_left {
+    height: 555px;
+    position: relative;
+}
+.rds0_right {
+    padding-top: 48px;
+}
+
+.rds0_card {
+    background: #3E8E41;
+    display: grid;
+    border-radius: 56px;
+    overflow: hidden;
+}
+.rds0_card .thumb {
+    border-radius: 56px;
+    overflow: hidden;
+    border: 2px solid var(--color-primary-green);
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+.rds0_card .thumb img {
+    width: 100%;
+}
+.rds0_card .details {
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    font-size: 20px;
+    line-height: 136%;
+    padding: 24px;
+    text-align: center;
+}
+.rds0_card .details strong {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.rds2,
+.rds3 {
+    display: grid;
+    gap: 48px;
+    padding: 0 0 128px 0;
+}
+.rds2_desc {
+    max-width: 80%;
+}
+
+/* test */
+.section-x {
+  width: 100%;
+  padding: 128px 0;
+}
+
+.test-x {
+  display: flex;
+  align-items: flex-start;
+  height: 480px;
+  position: relative;
+}
+
+.left-x {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 480px;
+}
+
+.right-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.right-x {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.stack-x {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 720px;
+  padding: 48px;
+  height: 480px;
+  border-radius: 56px;
+  background: linear-gradient(to bottom, #0084FF, #1155D0); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.8);
+  text-align: center;
+  overflow: hidden;
+}
+.card-x h6 {
+    font-weight: 600;
+    font-size: 36px;
+}
+.card-x span {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 72px;
+    font-weight: 100;
+    letter-spacing: -4px;
+    color: #00D9FF;
+}
+.card-x img {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    z-index: -1;
+}
+
+.card-x:first-child {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+
 
